@@ -1,8 +1,7 @@
-// TODO: Include packages needed for this application
-// import inquirer from "inquirer";
+const Team = require("./lib/team.js");
 
-// TODO: Create an array of questions for user input
+// Initialize a new team member
+const team = new Team();
 
-// TODO: Create a function to generate HTML from user input
-
-// TODO: Create a function to initialize app
+// Add a new team member
+team.addMember();
