@@ -1,5 +1,11 @@
-// TODO: Create a function that returns a Github profile based on the username
+import inquirer from "inquirer";
+import fs from "fs";
 
-// TODO: Create a function that returns an email link based on the email
+// Import classes
+import Engineer from "./lib/engineer.js";
+import Intern from "./lib/intern.js";
+import Manager from "./lib/manager.js";
+import Employee from "./lib/employee.js";
 
-// TODO: Create a function that generate the HTML based on the user input
+// Import generateHTML function
+import generateHTML from "./generateHTML.js";
