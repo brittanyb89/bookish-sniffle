@@ -1,7 +1,6 @@
 {
   "private": true,
-  "main": "app/index.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "vitest"
   },
