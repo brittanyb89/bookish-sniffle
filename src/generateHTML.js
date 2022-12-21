@@ -2,18 +2,12 @@ const inquirer = require('inquirer');
 const { writeFile} = require("fs").promises;
 // import fs from "fs";
 
-// Import classes
-import Engineer from "./lib/engineer.js";
-import Intern from "./lib/intern.js";
-import Manager from "./lib/manager.js";
-import Employee from "./lib/employee.js";
-
 
 // Import HTML template
 const teamMembers = [];
 const employees = [name, id, email];
 
-const generateHTML = require({ ...employees,  }) =>
+const generateHTML = require({ ...employees, engineer, intern, manager }) =>
  `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +41,7 @@ const generateHTML = require({ ...employees,  }) =>
             <h6 class="card-subtitle mb-2 text-muted">Role: ${teamMemberType} <span id="role"></span></h6>
             <p class="card-text">ID: ${id} <span id="id"></span></p>
             <p class="card-text">Email: ${email} <span id="email"></span></p>
-            <p class="card-text`>${teamMemberType}<span id=`default"></span></p>
+            <p class="card-text">${teamMemberType.manager, intern, engineer}<span id="default"></span></p>
           </div>
         </div>
       </div>
