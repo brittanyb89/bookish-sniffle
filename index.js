@@ -74,7 +74,7 @@ function addManager() {
       );
       listMembers.push(managerMember);
       console.info(listMembers);
-      askMenu();
+      askToBuildTeam();
     });
 }
 
@@ -128,16 +128,54 @@ function askForTeamMemberType() {
     // If user selects Engineer, add a new engineer
     // If user selects Intern, add a new intern
     // If user selects Manager, add a new manager
-    // If user selects Employee, add a new employee
-    // If user selects None, end the application with a thank you message
     .then((response) => {
-      console.info("This is type response: ", response);
       if (response.teamMemberType === "Engineer") {
         addEngineer();
       } else if (response.teamMemberType === "Intern") {
         addIntern();
       } else if (response.teamMemberType === "Manager") {
         addManager();
+      }
+    });
+}
+
+function askToBuildTeam() {
+  inquirer
+    .prompt([
+      {
+        type: "confirm",
+        name: "buildTeam",
+        message: "Would you like to build your team?",
+      },
+    ])
+    // If user selects yes, add a new team member
+    // If user selects no, end the application with a thank you message
+    .then((response) => {
+      if (response.buildTeam) {
+        askForTeamMember();
+      } else {
+        console.info("Thank you for using the Team Profile Generator!");
+      }
+    });
+}
+
+function askForTeamMember() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "teamMember",
+        message: "What type of team member would you like to add?",
+        choices: ["Engineer", "Intern"],
+      },
+    ])
+    // If user selects Engineer, add a new engineer
+    // If user selects Intern, add a new intern
+    .then((response) => {
+      if (response.teamMember === "Engineer") {
+        addEngineer();
+      } else if (response.teamMember === "Intern") {
+        addIntern();
       }
     });
 }
