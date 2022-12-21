@@ -139,6 +139,7 @@ function askForTeamMemberType() {
     });
 }
 
+// prompt user to build team if manager is added
 function askToBuildTeam() {
   inquirer
     .prompt([
@@ -159,6 +160,7 @@ function askToBuildTeam() {
     });
 }
 
+// will ask user to add engineer or intern if manager is added from build team prompt
 function askForTeamMember() {
   inquirer
     .prompt([
