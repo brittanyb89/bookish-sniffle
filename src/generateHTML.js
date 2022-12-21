@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const { writeFile } = require("fs").promises;
-import listMembers from "./index.js";
 
 function Members(list) {
   list.forEach((element) => {
@@ -51,14 +50,14 @@ function Members(list) {
   });
 }
 
-// TODO: push string into new array
+// Pushed string into new array
 const generateHTML = (list) => {
   const html = Members(list);
   return html;
 };
 
-// TODO: join array into one string
-const generatePage = (html) => {
+// Joined array into one string
+function generatePage (htmlPage => {
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -89,24 +88,9 @@ const generatePage = (html) => {
     </div>
   </body>
   </html>`;
-};
-
-// TODO: create html file
-const writeFile = (data) => {
-  return new Promise((resolve, reject) => {
-    fs.writeFile("./dist/index.html", data, (err) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve({
-        ok: true,
-        message: "File created!",
-      });
-    });
   });
-};
 
+// Created html file
 const init = () => {
   listMembers()
     .then((answers) => writeFile("generatedHTML.html", generateHTML(answers)))

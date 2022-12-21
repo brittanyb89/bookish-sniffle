@@ -2,12 +2,7 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+The development of this project was inspired by business software that enables employers to keep a roster of team members. Each entered team member's name, role, ID, email address, and other information depending on their role. This generator should simplify entering employee information and make it easier to view current team. This eliminates unorganized paperwork, save time on adding and searching for employee information by saving entered roster into terminal. I learned that the terminal could create and saved information rather than saving information into the local storage.
 
 ## Table of Contents (Optional)
 
@@ -20,7 +15,10 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To install:
+-Open your terminal
+-Enter 'node index.js'
+-From here, you will be prompted with the next generated question
 
 ## Usage
 
@@ -34,11 +32,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+n/a
 
 ## License
 
