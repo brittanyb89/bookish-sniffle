@@ -1,5 +1,4 @@
-const inquirer = require("inquirer");
-const { writeFile } = require("fs").promises;
+// const inquirer = require("inquirer");
 
 function Members(list) {
   list.forEach((element) => {
@@ -57,7 +56,8 @@ const generateHTML = (list) => {
 };
 
 // Joined array into one string
-function generatePage (htmlPage => {
+const generatePage = (html) => {
+  console.log("generatePage");
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -88,14 +88,14 @@ function generatePage (htmlPage => {
     </div>
   </body>
   </html>`;
-  });
-
-// Created html file
-const init = () => {
-  listMembers()
-    .then((answers) => writeFile("generatedHTML.html", generateHTML(answers)))
-    .then(() => console.log("Successfully wrote to generatedHTML.html"))
-    .catch((err) => console.error(err));
 };
 
-init();
+module.exports = generateHTML.html;
+
+// Created html file
+// const init = () => {
+//   listMembers()
+//     .then((answers) => writeFile("generatedHTML.html", generateHTML(answers)))
+//     .then(() => console.log("Successfully wrote to generatedHTML.html"))
+//     .catch((err) => console.error(err));
+// };
