@@ -153,11 +153,13 @@ function askMenu() {
       if (response.newMember) {
         askForTeamMemberType();
       } else if (!response.newMember) {
-        writeFile("index.html", generateHTML(listMembers))
-          .then(() =>
-            console.log("Thank you for using the Team Profile Generator!")
-          )
-          .catch((err) => console.error(err));
+        writeFile("index.html", generateHTML(listMembers), (err) => {
+          if (err) {
+            console.log(err);
+          }
+
+          console.log("Success!");
+        });
       }
     });
 }

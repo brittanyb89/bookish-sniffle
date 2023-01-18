@@ -1,52 +1,75 @@
 // const inquirer = require("inquirer");
 
 function Members(list) {
+  // Create an empty array
+  const addCardMembers = [];
+
   list.forEach((element) => {
     if (element.getRole() === "Manager") {
-      return `<div class="row">
+      addCardMembers.push(`<div class="row">
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Name: ${element.name} <span id="name"></span></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole}<span id="role"></span></h6>
+            <h5 class="card-title">Name: ${
+              element.name
+            } <span id="name"></span></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole()}<span id="role"></span></h6>
             <p class="card-text">ID: ${element.ID} <span id="id"></span></p>
-            <a href="email.com" class="card-text"> ${element.email} <span id="email"></span></a>
-            <a href class="card-text" src="github.com"> ${element.officeNumber}<span id="default"></span></a>
+            <a href="email.com" class="card-text"> ${
+              element.email
+            } <span id="email"></span></a>
+            <a href class="card-text" src="github.com"> ${
+              element.officeNumber
+            }<span id="default"></span></a>
           </div>
         </div>
-      </div>`;
+      </div>`);
     }
 
     if (element.getRole() === "Engineer") {
-      return `<div class="row">
+      addCardMembers.push(`<div class="row">
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Name: ${element.name} <span id="name"></span></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole}<span id="role"></span></h6>
+            <h5 class="card-title">Name: ${
+              element.name
+            } <span id="name"></span></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole()}<span id="role"></span></h6>
             <p class="card-text">ID: ${element.ID} <span id="id"></span></p>
-            <a href="email.com" class="card-text"> ${element.email} <span id="email"></span></a>
-            <a href class="card-text" src="github.com"> ${element.github}<span id="default"></span></a>
+            <a href="email.com" class="card-text"> ${
+              element.email
+            } <span id="email"></span></a>
+            <a href class="card-text" src="github.com"> ${
+              element.github
+            }<span id="default"></span></a>
           </div>
         </div>
-      </div>`;
+      </div>`);
     }
 
     if (element.getRole() === "Intern") {
-      return `<div class="row">
+      addCardMembers.push(`<div class="row">
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Name: ${element.name} <span id="name"></span></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole}<span id="role"></span></h6>
+            <h5 class="card-title">Name: ${
+              element.name
+            } <span id="name"></span></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole()}<span id="role"></span></h6>
             <p class="card-text">ID: ${element.ID} <span id="id"></span></p>
-            <a href="email.com" class="card-text"> ${element.email} <span id="email"></span></a>
-            <a href class="card-text" src="github.com"> ${element.school}<span id="default"></span></a>
+            <a href="email.com" class="card-text"> ${
+              element.email
+            } <span id="email"></span></a>
+            <a href class="card-text" src="github.com"> ${
+              element.school
+            }<span id="default"></span></a>
           </div>
         </div>
-      </div>`;
+      </div>`);
     }
   });
+  console.log(addCardMembers);
+  return addCardMembers;
 }
 
 // Pushed string into new array
@@ -56,9 +79,7 @@ const generateHTML = (list) => {
 };
 
 // Joined array into one string
-const generatePage = (html) => {
-  console.log(generatePage);
-  return `<!DOCTYPE html>
+const generatePage = (html) => `<!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -88,10 +109,10 @@ const generatePage = (html) => {
     </div>
   </body>
   </html>`;
-};
 
 // Export a function that generates the HTML
 module.exports = (list) => {
-  console.log(generateHTML);
+  console.log(generatePage(generateHTML(list)));
+
   return generatePage(generateHTML(list));
 };
