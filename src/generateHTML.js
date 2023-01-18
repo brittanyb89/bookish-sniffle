@@ -57,7 +57,7 @@ const generateHTML = (list) => {
 
 // Joined array into one string
 const generatePage = (html) => {
-  console.log("generatePage");
+  console.log(generatePage);
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -90,12 +90,8 @@ const generatePage = (html) => {
   </html>`;
 };
 
-module.exports = generateHTML.html;
-
-// Created html file
-// const init = () => {
-//   listMembers()
-//     .then((answers) => writeFile("generatedHTML.html", generateHTML(answers)))
-//     .then(() => console.log("Successfully wrote to generatedHTML.html"))
-//     .catch((err) => console.error(err));
-// };
+// Export a function that generates the HTML
+module.exports = (list) => {
+  console.log(generateHTML);
+  return generatePage(generateHTML(list));
+};

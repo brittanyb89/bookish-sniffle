@@ -2,7 +2,7 @@ const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const inquirer = require("inquirer");
-const generateHTML = require("./src/generateHTML");
+const generateHTML = require("./src/generateHTML.js");
 const { writeFile } = require("fs").promises;
 const listMembers = [];
 
@@ -153,7 +153,7 @@ function askMenu() {
       if (response.newMember) {
         askForTeamMemberType();
       } else if (!response.newMember) {
-        writeFile("generatedHTML.html", generateHTML(listMembers))
+        writeFile("index.html", generateHTML(listMembers))
           .then(() =>
             console.log("Thank you for using the Team Profile Generator!")
           )
@@ -163,6 +163,8 @@ function askMenu() {
 }
 
 // initial prompt to add manager
+module.exports.addManager = addManager;
 addManager();
 
+// export listMembers
 module.exports.listMembers = listMembers;
