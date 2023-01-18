@@ -14,7 +14,7 @@ function Members(list) {
               element.name
             } <span id="name"></span></h5>
             <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole()}<span id="role"></span></h6>
-            <p class="card-text">ID: ${element.ID} <span id="id"></span></p>
+            <p class="card-text">ID: ${element.id} <span id="id"></span></p>
             <a href="email.com" class="card-text"> ${
               element.email
             } <span id="email"></span></a>
@@ -35,7 +35,7 @@ function Members(list) {
               element.name
             } <span id="name"></span></h5>
             <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole()}<span id="role"></span></h6>
-            <p class="card-text">ID: ${element.ID} <span id="id"></span></p>
+            <p class="card-text">ID: ${element.id} <span id="id"></span></p>
             <a href="email.com" class="card-text"> ${
               element.email
             } <span id="email"></span></a>
@@ -56,7 +56,7 @@ function Members(list) {
               element.name
             } <span id="name"></span></h5>
             <h6 class="card-subtitle mb-2 text-muted">Role: ${element.getRole()}<span id="role"></span></h6>
-            <p class="card-text">ID: ${element.ID} <span id="id"></span></p>
+            <p class="card-text">ID: ${element.id} <span id="id"></span></p>
             <a href="email.com" class="card-text"> ${
               element.email
             } <span id="email"></span></a>
