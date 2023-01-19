@@ -1,41 +1,43 @@
 const Manager = require("../lib/Manager");
 const { describe, it, expect } = require("vitest");
 
-// Unit test for manager; failing test
 describe("Manager", () => {
-  it("Should create a new manager with a name, id, email, and office number if provided valid arguments", () => {
-    expect(
-      new Manager("Tracy", 4578, "tracymoor@email.com", 314 - 555 - 5778)
-    ).toBe(false);
-  });
+  describe("Initialization", () => {
+    it("Should create a new manager with a name, id, email, and office number if provided valid arguments", () => {
+      const obj = new Manager();
 
-  it("Should throw an error if no name was provided", () => {
-    expect(() => new Manager()).toThrow("You must provide a name");
-  });
+      expect("name" in obj).toEqual(true);
+    });
 
-  it("Should throw an error if no email was provided", () => {
-    expect(() => new Manager()).toThrow("You must provide an email");
-  });
+    it("Should set 'name' when created", () => {
+      const name = "Tracy";
 
-  it("Should throw an error if no office number was provided", () => {
-    expect(() => new Manager()).toThrow("You must provide an office number");
+      const obj = new Manager(name);
+      expect(obj.name).toEqual(name);
+    });
+
+    it("Should throw an error if no name was provided", () => {
+      expect(() => new Manager()).toThrow("You must provide a name");
+    });
+
+    it("Should throw an error if no email was provided", () => {
+      expect(() => new Manager()).toThrow("You must provide an email");
+    });
+
+    it("Should throw an error if no office number was provided", () => {
+      expect(() => new Manager()).toThrow("You must provide an office number");
+    });
   });
 });
 
-// Unit test for manager; passing test
-describe("getOfficeNumber", () => {
+describe("OfficeNumber", () => {
   it("Should return the office number of the manager", () => {
-    const manager = new Manager(
-      "Tracy",
-      4578,
-      "tracymoore@email.com",
-      314 - 555 - 5778
-    );
-    expect(manager.getOfficeNumber()).toBe(314 - 555 - 5778);
+    const manager = new Manager("123");
+    expect(manager.getOfficeNumber()).toBe("123");
   });
 });
 
-describe("getRole", () => {
+describe("Role", () => {
   it("Should return the role of the manager", () => {
     const manager = new Manager("Manager");
     expect(manager.getRole()).toBe("Manager");
