@@ -4,6 +4,7 @@ const Intern = require("./lib/intern");
 const inquirer = require("inquirer");
 const generateHTML = require("./src/generateHTML.js");
 const { writeFile } = require("fs").promises;
+
 const listMembers = [];
 
 function addManager() {
@@ -164,9 +165,15 @@ function askMenu() {
     });
 }
 
+function init() {
+  addManager();
+}
+
+init();
+
 // initial prompt to add manager
-module.exports.addManager = addManager;
-addManager();
+// module.exports.addManager = addManager;
+// addManager();
 
 // export listMembers
 module.exports.listMembers = listMembers;
